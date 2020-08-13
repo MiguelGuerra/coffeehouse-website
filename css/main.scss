@@ -1,0 +1,377 @@
+/* Vars */
+$golden: #d0c96c;
+
+/* Reusable classes*/
+*:focus{               //tira a border azul dos forms
+	outline: none;
+}
+.work-sans{
+	font-family: 'Work Sans', sans-serif;
+}
+.golden{
+	color: $golden;
+}
+.playfair{
+	font-family: 'Playfair Display', serif; 
+}
+.dancing-script{
+	font-family: 'Dancing Script', cursive;
+}
+.sp20{
+	height:  20px;
+}
+.sp15{
+	height: 15px;
+}
+.letter-spacing{
+	letter-spacing: 3px;
+}
+
+
+
+/* Styles */
+html, body{
+	margin: 0;
+	height: 100%;
+}
+
+body{
+	background: black;
+	color: #bbb;
+	font-family: 'Work Sans', sans-serif;
+}
+
+i.material-icons{
+	vertical-align: sub; /*todos os material icons sao centrados verticalmente*/
+}
+
+
+#video {
+	background: url(../images/9k=-6.jpg);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	background-size:cover;
+	height:100%;
+	#scene{
+	padding-top: 175px;
+	}
+}
+
+header{
+	position: absolute;
+	height: 100px;
+	width:  100%;
+	img{
+		width:110px;
+	}
+	.menu{
+		position: absolute;
+		top: 40px; /*coordenadas para o .menu*/   
+		right: 0;
+		cursor: pointer;  /*aparece uma maozinha quando passamos o rato por cima*/
+		z-index: 1;
+		i{
+			color: white;
+		}
+		&:hover{
+			i{
+				color: $golden;
+			}
+		}
+	}
+}
+
+h1, h2{
+	@extend .playfair;  /*o h1, h2 fica com a classe associada*/
+	color: white;
+}
+
+h1{
+	font-size: 55px;
+	text-align: center;
+	span{
+		font-size: 14px;
+		color: $golden;
+		text-transform: uppercase;
+		@extend .work-sans;  /*o span fica com a classe associada*/
+		display: block;  /*torna o span para um elemento em bloco e assim nao deixa nada ficar a frente dele*/
+		letter-spacing: 3px;
+	}
+}
+
+.vline{
+	height: 100px;
+	width: 1px;
+	margin: 15px auto;
+	background: $golden;
+}
+
+.btn-golden{
+	border: 1px solid darken($golden, 45%);    /*o darken escurece uma cor, e uma propriedade do sass*/
+	color: $golden;
+	padding: 15px 50px;
+	text-transform: uppercase;
+	&:hover, &:focus{
+		color: white;
+		border: 1px solid darken(white, 45%);
+		text-decoration: none;
+		outline: 0; //tira o outline
+	}
+	
+}
+
+.btn-white{
+	border: 1px solid darken(white, 45%);    /*o darken escurece uma cor, e uma propriedade do sass*/
+	color: white;
+	padding: 15px 50px;
+	text-transform: uppercase;
+	transition: all .4s;
+	&:hover, &:focus{
+		color: $golden;
+		border: 1px solid darken($golden, 45%);
+		text-decoration: none;
+		outline: 0; //tira o outline
+	}
+	
+}
+
+#history{
+	background: url(../images/9k=-5.jpg) bottom left no-repeat;
+	background-size: cover;
+	padding: 65px 0px;
+	
+}
+
+#services {
+	background: url(../images/2Q==-1.jpg) center -100px no-repeat;  //o background esta alinhado ao centro e sobe 100px
+	background-size: cover;
+	padding: 65px 0px;
+	h2{
+		text-transform: uppercase;
+		margin-top:40px;
+	}
+	h4{
+		font-size: 14px;
+		color: rgba(255, 255, 255, .5);
+		margin-bottom: 30px;
+	}
+}
+
+#reviews_gallery{
+	background: url(../images/2Q==-4.jpg) center -110px no-repeat;
+	background-size: cover;
+	padding: 65px 0px;
+
+p{
+	font-size: 16px;
+	font-style: bold;
+}
+h2{
+		i{
+		font-size: 40px;
+		}
+		
+	}
+h3{
+	font-size: 16px;
+	color: white;
+	font-style: bold;
+	i{
+		font-size: 14px;
+	}
+	}	
+}
+
+
+
+#menu{
+	background: url(../images/2Q==-2.jpg) center center no-repeat;
+	background-size: cover;
+	padding: 50px 0;
+	h2{
+		i{
+		font-size: 40px;
+		}
+		
+	}
+	h3{
+		@extend .dancing-script;
+		color: white;
+	}
+	span{
+		color: white;
+		font-weight: bold;
+	}
+	.col-md-8, .col-md-4{
+		margin-bottom: 30px;
+	}
+}
+
+
+#get-in-touch{
+	background: url(../images/2Q==-3.jpg) center center no-repeat;
+	background-size: cover;
+	padding: 100px 0;
+	p{
+		
+	}
+	form{
+		input[type="text"], input[type="submit"], textarea{
+			background: #222;
+			color: #999;
+			padding: 5px 10px;
+			width: 100%;
+			border: 0;
+			margin: 6px 0;
+			@extend .work-sans;
+		}
+		textarea{
+			height: 140px;
+		}
+		input[type="submit"]{
+			width: 160px;
+			cursor: pointer;
+			padding: 10px 20px;
+			text-transform: uppercase;
+			
+		}
+			
+	}
+}
+
+::-webkit-input-placeholder {   //pesquisei no google como mudar cor de placeholder
+    color: #555;
+}
+
+footer{
+	background: url(../images/Z-3.jpg) center center no-repeat;
+	background-size: cover;
+	padding: 50px 0;
+	text-align: center;
+	hr{
+		border-top: 2px solid #ccc;
+		width:40px;
+		margin-bottom: 30px;
+	}
+}
+
+
+nav{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: black;
+	height: 100%;
+	z-index: 1;
+	i{
+		vertical-align: middle;
+	}
+	.close-nav{
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		cursor: pointer;
+		&:hover{
+			color: $golden;
+		}
+	}
+	ul{
+		position: relative; //pode receber floats 
+		top: 50%;
+		transform: translateY(-50%);
+		text-align: center;
+		padding: 0;
+		li{
+			list-style: none;
+			a{
+				color: $golden;
+				font-size: 80px;   //fallback IE, porque o explorer nao sabe o sao vh e vw como medidas
+				line-height: 100px;
+				font-size: 7vw;   //viewport width e uma nova medida
+				line-height: 15vh;  //viewport height
+				&:hover{
+					color: darken($golden, 40%);
+					text-decoration: none;
+					transition: all .2s;  //transicao mais lenta
+				}
+			}
+		}
+	}
+}
+
+#nav {
+	right: 20px;   //fica posicionada a direira 
+	list-style: none;
+	margin: 0;
+	position: fixed;
+	top: 20px;
+	transform: translateY(-50%);
+	top: 50%;
+}
+
+#nav li {
+	margin-bottom: 2px;
+}
+
+#nav a {
+	background: #ededed;
+	color: #666;
+	display: block;
+	font-size: 14px;
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-indent: -9999px;
+	margin: 10px 0;
+	opacity: .3;
+}
+
+#nav a:hover {
+	background: #dedede;
+}
+
+#nav .current a {
+	background: #fff;
+	color: #ededed;
+	opacity: 1;
+}
+
+#preloader{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: black url(../images/loader.gif) center center no-repeat;
+	height: 100%;
+	z-index: 9;
+}
+
+
+/*---------------------------------------------------media query MOBILE-----------------------------------------------------*/
+
+@media (max-width:767px){
+	header .menu{
+		left:45px;
+		right: auto;
+	}
+	
+	#history{
+		background: black;
+		text-align: center;
+	}
+	#menu{
+		.col-md-8{
+			margin-bottom: 0px;
+		}
+		.col-md-4{
+			margin-bottom: 40px;
+		}
+	}
+	
+}
+
+
